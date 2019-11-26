@@ -10,4 +10,8 @@
         INSERT INTO str (text) VALUES (#{text})
     </insert>
 
+    <delete id="deleteStr" parameterType="int">
+        DELETE FROM str WHERE id = #{id}
+    </delete>
+
 </mapper>
