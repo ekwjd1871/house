@@ -6,11 +6,16 @@
     <!-- Mapper -->
     <resultMap id="House" type="House" />
 
-    <select id="findAllHouse" resultMap="House">
-        SELECT * FROM house;
+    <select id="findAllHouse" parameterType="Pagination" resultMap="House">
+        SELECT * FROM house LIMIT #{startList}, #{listSize};
     </select>
 
     <select id="findHouseById" parameterType="int" resultMap="House">
         SELECT * FROM house WHERE house_id = #{houseId};
     </select>
+
+    <select id="getHouseAllCount" resultType="int">
+        SELECT count(*) as listCnt FROM house;
+    </select>
+
 </mapper>

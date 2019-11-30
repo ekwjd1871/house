@@ -30,11 +30,6 @@ public class HouseRestController {
     @Autowired
     private HouseService service;
 
-    @RequestMapping(value = "/houses", method = RequestMethod.GET)
-    public List<House> selectAll() {
-        return service.getAllHouse();
-    }
-
     @RequestMapping(value = "/{houseId}", method = RequestMethod.GET)
     public House selectHouse(@PathVariable int houseId) {
         logger.info("HouseId para : {}", houseId);

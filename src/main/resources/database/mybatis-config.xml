@@ -11,6 +11,7 @@
         <typeAlias alias="Str" type="cs.db.house.Model.Str" />
         <typeAlias alias="House" type="cs.db.house.Model.House" />
         <typeAlias alias="Option" type="cs.db.house.Model.Option" />
+        <typeAlias alias="Pagination" type="cs.db.house.Model.Pagination" />
     </typeAliases>
 
     <typeHandlers>
