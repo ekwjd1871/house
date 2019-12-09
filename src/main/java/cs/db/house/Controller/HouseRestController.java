@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Flow)
@@ -31,8 +32,9 @@ public class HouseRestController {
     private HouseService service;
 
     @RequestMapping(value = "/{houseId}", method = RequestMethod.GET)
-    public House selectHouse(@PathVariable int houseId) {
+    public Map<String, Object> selectHouse(@PathVariable int houseId) {
         logger.info("HouseId para : {}", houseId);
+
         return service.getHouse(houseId);
     }
 }

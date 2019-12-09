@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class Pagination {
-    private int listSize = 9;
+    private int listSize = 10;
     private int rangeSize = 10;
     private int page;
     private int range;

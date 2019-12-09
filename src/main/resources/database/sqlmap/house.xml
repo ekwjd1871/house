@@ -5,9 +5,10 @@
 
     <!-- Mapper -->
     <resultMap id="House" type="House" />
+    <resultMap id="Option" type="Option" />
 
     <select id="findAllHouse" parameterType="Pagination" resultMap="House">
-        SELECT * FROM house LIMIT #{startList}, #{listSize};
+        SELECT * FROM house ORDER BY deposit ASC LIMIT #{startList}, #{listSize};
     </select>
 
     <select id="findHouseById" parameterType="int" resultMap="House">
@@ -18,4 +19,41 @@
         SELECT count(*) as listCnt FROM house;
     </select>
 
+    <select id="getSpecifiedHouses" parameterType="Map" resultType="House">
+        SELECT * FROM house
+        WHERE
+        <if test="filter.name != ''">
+            name LIKE CONCAT('%', #{filter.name}, '%') AND
+        </if>
+        <if test="filter.type != ''">
+            type = #{filter.type} AND
+        </if>
+        <if test="filter.structure != ''">
+            structure = #{filter.structure} AND
+        </if>
+        deposit BETWEEN #{filter.minDeposit} AND #{filter.maxDeposit} AND
+        monthly_rent BETWEEN #{filter.minMonthlyRent} AND #{filter.maxMonthlyRent}
+        ORDER BY deposit ASC
+        LIMIT #{pagination.startList}, #{pagination.listSize};
+    </select>
+
+    <select id="getSpecifiedHouseCount" parameterType="FilterDto" resultType="int">
+        SELECT count(*) FROM house
+        WHERE
+            <if test="name != ''">
+                name LIKE CONCAT('%', #{name}, '%') AND
+            </if>
+            <if test="type != ''">
+                type = #{type} AND
+            </if>
+            <if test="structure != ''">
+                structure = #{structure} AND
+            </if>
+            deposit BETWEEN #{minDeposit} AND #{maxDeposit} AND
+            monthly_rent BETWEEN #{minMonthlyRent} AND #{maxMonthlyRent};
+    </select>
+
+    <select id="getOptionById" parameterType="int" resultMap="Option">
+        SELECT * FROM options WHERE option_id = #{id};
+    </select>
 </mapper>

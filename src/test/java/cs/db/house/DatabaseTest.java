@@ -1,5 +1,6 @@
 package cs.db.house;
 
+import cs.db.house.Model.FilterDto;
 import cs.db.house.Model.House;
 import cs.db.house.Model.Option;
 import cs.db.house.Model.Str;
@@ -48,44 +49,53 @@ public class DatabaseTest {
         assertNotNull(dataSource.getConnection());
     }
 
-    @Test
-    public void testCrud() {
-        Str str = new Str("스트링");
-        int row = 0;
-
-        row = strRepository.createStr(str);
-
-        assertThat(row, is(1));
-
-        row = 0;
-
-        row = strRepository.deleteStr(1);
-
-        assertThat(row, is(1));
-    }
-
-    @Test
-    public void houseCrud() {
-//        List<House> houses = houseRepository.selectAllHouse();
-//        logger.info("houses ? {}", houses);
+//    @Test
+//    public void testCrud() {
+//        Str str = new Str("스트링");
+//        int row = 0;
 //
-//        assertFalse(houses.isEmpty());
+//        row = strRepository.createStr(str);
 //
-//        House house = houseRepository.selectHouseById(1);
-//        logger.info("house ? {}", house);
+//        assertThat(row, is(1));
 //
-//        assertNotNull(house);
-    }
-
-    @Test
-    public void optionCrud() {
-        List<Option> optionList;
-
-        optionList = optionRepository.findAll();
-
-        for(Option option : optionList) {
-            System.out.println("Option : " + option);
-        }
-    }
-
+//        row = 0;
+//
+//        row = strRepository.deleteStr(1);
+//
+//        assertThat(row, is(1));
+//    }
+//
+//    @Test
+//    public void houseCrud() {
+////        List<House> houses = houseRepository.selectAllHouse();
+////        logger.info("houses ? {}", houses);
+////
+////        assertFalse(houses.isEmpty());
+////
+////        House house = houseRepository.selectHouseById(1);
+////        logger.info("house ? {}", house);
+////
+////        assertNotNull(house);
+//    }
+//
+//    @Test
+//    public void optionCrud() {
+//        List<Option> optionList;
+//
+//        optionList = optionRepository.findAll();
+//
+//        for(Option option : optionList) {
+//            System.out.println("Option : " + option);
+//        }
+//    }
+//
+//    @Test
+//    public void filter() {
+//        List<House> houses = new ArrayList<>();
+//        FilterDto filter = new FilterDto("", "", "", "", "1000000", "", "100000");
+//
+////        houses = houseRepository.getSpecifiedHouses(filter);
+//        logger.warn("result {}", houses);
+//        logger.warn("row {}", houses.size());
+//    }
 }

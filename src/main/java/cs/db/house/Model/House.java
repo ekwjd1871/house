@@ -16,4 +16,6 @@ public class House {
     private int deposit;
     private int monthlyRent;
     private String structure;
+    private String latlngX;
+    private String latlngY;
 }

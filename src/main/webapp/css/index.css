@@ -1,0 +1,162 @@
+.nav-link {
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.button {
+    font-size: 1em;
+    padding: 10px;
+    color: black;
+<!-- border: 2 px solid #06D85F;
+border-radius: 20 px / 50 px;
+--> text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+<!-- background: #06D85F;
+-->
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #ffcc00
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+
+    .popup {
+        width: 70%;
+    }
+}
+
+.popup > .popup-header > h2, .popup > .popup-header > p {
+    display: inline-block;
+}
+
+.btn {
+    z-index: 0 !important;
+}
+
+.popup-body {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 3%;
+}
+
+.popup-body > div.content p {
+    margin: 0;
+}
+
+.popup-body > div.content {
+    display: flex;
+    flex: 1
+}
+
+.popup-body > div.content .content-left p {
+    width: 50px
+}
+
+.popup-body > div.content .content-right {
+    margin-left: 10px;
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page-item.active .page-link {
+    background-color: #ff9f31 !important;
+    border-color: #ff9f31 !important;
+    color: aliceblue !important;
+    font-weight: 700;
+}
+
+a {
+    color: #ff9f31 !important;
+    font-weight: 700;
+}
+
+label {
+    font-weight: 700 !important;
+    color: azure;
+}
+
+.popup-header, .txt {
+    font-weight: 700 !important;
+    color: #ff9f31;
+    padding: 1%;
+}
+
+.content {
+    font-weight: 700 !important;
+    color: #ff9f31;
+}

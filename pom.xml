@@ -10,13 +10,14 @@
     </parent>
     <groupId>cs.db</groupId>
     <artifactId>house</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <packaging>war</packaging>
     <name>house</name>
     <description>CS DB Team Project</description>
 
     <properties>
         <java.version>1.8</java.version>
+        <maven.test.skip>true</maven.test.skip>
     </properties>
 
     <dependencies>
